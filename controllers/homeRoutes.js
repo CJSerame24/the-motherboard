@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Posts, Users } = require('../models'); // <== verify these variables are correct
+const { Posts, Users } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
     try {
-        // Get all plants and JOIN with user data
+        // Get all posts and JOIN with user data
         const postData = await Posts.findAll({
             include: [
                 {
@@ -15,11 +15,11 @@ router.get('/', async (req, res) => {
         });
 
         // Serialize data so the template can read it
-        const plants = plantData.map((plants) => plants.get({ plain: true }));
+        const posts = postData.map((posts) => posts.get({ plain: true }));
 
         // Pass serialized data and session flag into template
         res.render('homepage', {
-            plants,
+            posts,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -27,9 +27,9 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/plants/:id', async (req, res) => {
+router.get('/posts/:id', async (req, res) => {
     try {
-        const plantData = await Plants.findByPk(req.params.id, {
+        const postData = await Posts.findByPk(req.params.id, {
             include: [
                 {
                     model: Users,
@@ -38,10 +38,10 @@ router.get('/plants/:id', async (req, res) => {
             ],
         });
 
-        const plants = plantData.get({ plain: true });
+        const posts = postData.get({ plain: true });
 
-        res.render('plants', {
-            ...plants,
+        res.render('posts', {
+            ...posts,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -55,7 +55,7 @@ router.get('/profile', withAuth, async (req, res) => {
         // Find the logged in user based on the session ID
         const userData = await Users.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Plants }], // <== do we need to include Owned_Plants model?
+            include: [{ model: Posts }],
         });
 
         const user = userData.get({ plain: true });
