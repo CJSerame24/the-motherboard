@@ -1,0 +1,30 @@
+[
+  {
+    "first_name": "Sal",
+    "last_name": "Vulcano",
+    "username": "sexysal",
+    "email": "sal@impractechal.com",
+    "password": "password12345"
+  },
+  {
+    "first_name": "Brian",
+    "last_name": "Quinn",
+    "username": "quirkyQ",
+    "email": "Q@impractechal.com",
+    "password": "password12345"
+  },
+  {
+    "first_name": "Joe",
+    "last_name": "Gatto",
+    "username": "whereslarry",
+    "email": "gattogut@impractechal.com",
+    "password": "password12345"
+  },
+  {
+    "first_name": "James",
+    "last_name": "Murray",
+    "username": "murrkin",
+    "email": "murr@impractechal.com",
+    "password": "password12345"
+  }
+]

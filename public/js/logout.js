@@ -13,5 +13,5 @@ const logout = async () => {
     }
 };
 
-// Need to verify that we're using #logout for our selector for the Plantsy app
+
 document.querySelector('#logout').addEventListener('click', logout);
