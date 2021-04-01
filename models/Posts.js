@@ -27,6 +27,7 @@ Posts.init({
             key: 'id'
         }
     },
+    // insert timestamp
 },
     {
         sequelize,
