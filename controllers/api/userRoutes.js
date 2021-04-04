@@ -18,8 +18,8 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        const userData = await User.findOne({ where: { email: req.body.email } || { username: req.body.username } }); // <== is this correct syntax?
-
+        const userData = await Users.findOne({ where: { email: req.body.email } }); // <== is this correct syntax?
+        // const userData = await User.findOne({ where: { email: req.body.email } || { username: req.body.username } }); // <== is this correct syntax?
         if (!userData) {
             res
                 .status(400)
@@ -44,7 +44,29 @@ router.post('/login', async (req, res) => {
         });
 
     } catch (err) {
-        res.status(400).json(err);
+        res.status(500).json(err);
+    }
+});
+
+// CREATE new user
+router.post('/signup', async (req, res) => {
+    try {
+        const createUserData = await Users.create({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password,
+        });
+
+        req.session.save(() => {
+            req.session.loggedIn = true;
+
+            res.status(200).json(createUserData);
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
     }
 });
 

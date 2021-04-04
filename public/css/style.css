@@ -1,0 +1,49 @@
+body {
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    background-color: #2c0155;
+}
+
+.brand,
+.nav-link:hover {
+    color: #21b3b8;
+}
+
+.nav-link {
+    color: #fa5189;
+    font-size: 14pt;
+}
+
+.btn {
+    background-color: #21b3b8;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #fa5189;
+    color: #214eb8;
+    border: none;
+}
+
+/* Settings for people image for Home page banner */
+#banner {
+    background: url(https://res-3.cloudinary.com/fieldfisher/image/upload/c_lfill,g_auto/f_auto,q_auto/v1/sectors/technology/tech_neoncircuitboard_857021704_medium_lc5h05) center center no-repeat;
+    background-size: cover;
+    height: 725px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.card {
+    width: 100%;
+    margin-left: 50%;
+}
+
+@media screen and (max-width: 770px) {
+    .card {
+        margin: auto;
+    }
+}
