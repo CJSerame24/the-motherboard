@@ -40,6 +40,31 @@ body {
 .card {
     width: 100%;
     margin-left: 50%;
+    background-color: #f1feff;
+}
+
+.card-title {
+    text-decoration: none;
+    font-size: 20pt;
+    color:#fa5189;
+}
+
+.card-title:hover {
+    color:#21b3b8;
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.author {
+    text-align: end;
+    font-size: 10pt;
+    color: #21b3b8;
 }
 
 @media screen and (max-width: 770px) {

@@ -5,8 +5,9 @@
     <div class="row mb-2 ">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">{{post.title}}</h4>
+                <a class="card-title" href="./posts/{{post.id}}">{{post.title}}</a>
                 <p class="card-text">{{post.body}}</p>
+                <p class="author"><i>{{post.User.username}}</i></p>
             </div>
         </div>
     </div>
