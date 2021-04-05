@@ -3,7 +3,7 @@ const { Comments } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get one post from global posts list
-router.get('/posts/:id', async (req, res) => {
+router.get('/posts/:id', withAuth, async (req, res) => {
     // find a single post by its `id`
     try {
         const commentsData = await Comments.findByPk(req.params.id,);
