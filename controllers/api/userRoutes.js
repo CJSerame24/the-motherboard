@@ -18,8 +18,7 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-        const userData = await Users.findOne({ where: { email: req.body.email } }); // <== is this correct syntax?
-        // const userData = await User.findOne({ where: { email: req.body.email } || { username: req.body.username } }); // <== is this correct syntax?
+        const userData = await Users.findOne({ where: { email: req.body.email } });
         if (!userData) {
             res
                 .status(400)

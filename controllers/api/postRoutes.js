@@ -7,7 +7,6 @@ router.get('/posts', async (req, res) => {
     // find all posts
     try {
         const postsData = await Posts.findAll();
-        console.log(postsData);
         res.status(200).json(postsData);
     } catch (err) {
         res.status(500).json(err);
@@ -57,7 +56,8 @@ router.put('/post/:id', withAuth, (req, res) => {
 router.post('/posts', withAuth, async (req, res) => {
     try {
         const newPost = await Posts.create({
-            ...req.body,
+            title: req.title,
+            body: req.body,
             user_id: req.session.user_id,
         });
 

@@ -1,11 +1,13 @@
 {{#if posts.id}}
 
-<div class="container mt-5">
+<div class="container post-container mt-5 rounded shadow-sm">
     <div class="row">
-        <h2>{{post.title}}</h2>
+        <h2 class="post-title">{{posts.title}}</h2>
     </div>
     <div class="row">
-        <p>{{post.body}}</p>
+        <p class="post-body">{{posts.body}}</p>
     </div>
 </div>
+
+
 {{/if}}
