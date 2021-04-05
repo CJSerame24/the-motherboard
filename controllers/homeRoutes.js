@@ -15,9 +15,6 @@ router.get('/posts', async (req, res) => {
                     model: Users,
                     attributes: ['username'],
                 },
-                {
-                    model: Comments,
-                }
             ],
         });
 
@@ -44,6 +41,10 @@ router.get('/posts/:id', async (req, res) => {
                     model: Users,
                     attributes: ['username'],
                 },
+                {
+                    model: Comments,
+                    attributes: ['comment'],
+                }
             ],
         });
 

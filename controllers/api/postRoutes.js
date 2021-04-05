@@ -19,7 +19,7 @@ router.get('/posts/:id', async (req, res) => {
     // find a single post by its `id`
     try {
         const postsData = await Posts.findByPk(req.params.id,);
-        console.log(postsData);
+        console.log(window.location);
 
         if (!postsData) {
             res.status(404).json({ message: 'No post found.' });

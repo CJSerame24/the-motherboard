@@ -3,12 +3,10 @@ const { Comments } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // get one post from global posts list
-router.get('/posts/:id', withAuth, async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
     // find a single post by its `id`
     try {
         const commentsData = await Comments.findByPk(req.params.id,);
-        console.log(commentsData);
-
         // if (!commentsData) {
         //     res.status(404).json({ message: 'No comments found.' });
         //     return;
@@ -20,11 +18,11 @@ router.get('/posts/:id', withAuth, async (req, res) => {
 });
 
 // Create a comment to single post
-router.post('/posts/:id', withAuth, async (req, res) => {
+router.post('/:id', withAuth, async (req, res) => {
     try {
         const newComment = await Comments.create({
-            comment: req.comment,
-            post_id: req.post_id,
+            comment: req.body.comment,
+            post_id: req.params.id,
             user_id: req.session.user_id,
         });
 
@@ -35,7 +33,7 @@ router.post('/posts/:id', withAuth, async (req, res) => {
 });
 
 // update given post in global posts list
-router.put('/post/:id', withAuth, (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Comments.update(
         {
             comment: req.body.comment,
@@ -55,7 +53,7 @@ router.put('/post/:id', withAuth, (req, res) => {
 
 
 // Delete a post from the global list
-router.delete('/post/:id', withAuth, async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try {
         const commentsData = await Comments.destroy({
             where: {
