@@ -31,6 +31,20 @@ router.get('/posts/:id', async (req, res) => {
     }
 });
 
+// Create a new post
+router.post('/:id', withAuth, async (req, res) => {
+    try {
+        const newPost = await Posts.create({
+            title: req.body.title,
+            body: req.body.body,
+            user_id: req.session.user_id,
+        });
+
+        res.status(200).json(newPost);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
 
 // update given post in global posts list
 router.put('/post/:id', withAuth, (req, res) => {

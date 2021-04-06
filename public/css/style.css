@@ -69,7 +69,8 @@ body {
     color:#fa5189;
 }
 
-.card-title:hover {
+.card-title:hover,
+.comment-header {
     color:#21b3b8;
 }
 
@@ -106,9 +107,15 @@ textarea {
     padding: 15px;
 }
 
-.comment-input {
+.comment-form {
     margin-left: 12%;
     width: 110%;
+}
+
+.comment-row {
+    border-top: solid 1px #bbbbbb;
+    width: 75%;
+    margin-left: 12%;
 }
 
 @media screen and (max-width: 770px) {

@@ -10,8 +10,8 @@
 </div>
 
 <div class="container mt-4">
-    <form class="form comment-form comment-input">
-        <div class="form-group">
+    <form class="form comment-form">
+        <div class="form-group justify-content-around">
             <label for="comment-field">Leave a comment:</label><br>
             <textarea class="body-input m-1 rounded" rows="2" id="comment-field"></textarea>
         </div>
@@ -19,6 +19,26 @@
             <button class="btn btn-primary m-1" type="submit">Comment</button>
         </div>
     </form>
+</div>
+
+<br>
+
+<div class="comments-feed">
+    <h4 class="comment-header text-center mb-4">Comments</h4>
+    {{#each posts.Comments as |comment|}}
+    <div class="container">
+        <div class="row comment-row py-3">
+            <div class="col-sm-1">
+                <p>{{comment.User.username}}: </p>
+            </div>
+            <div class="col-sm-11">
+                <p>{{comment.comment}}</p>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    {{/each}}
 </div>
 
 
