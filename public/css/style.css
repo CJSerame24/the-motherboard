@@ -43,6 +43,8 @@ body {
     width: 100%;
     display: flex;
     align-items: center;
+    padding-top: 50px;
+    padding-bottom: 300px;
 }
 
 /* Settings for header on Home page to display on top of banner image and function smoothly with smaller screens */
