@@ -1,5 +1,3 @@
-{{#if posts.length}}
-
 <button class="create-post-btn mt-4 rounded" aria-current="page" data-bs-toggle="modal" href="#modal" role="button"><i
         class="far fa-plus-square"></i> Create Post</button>
 
@@ -26,6 +24,10 @@
         </div>
     </div>
 </div>
+
+
+{{#if posts.length}}
+
 
 {{!-- List of all posts --}}
 <div class="col-md-6 posts-list mt-2">
