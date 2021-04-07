@@ -8,13 +8,20 @@ body {
 
 .brand,
 .nav-link:hover,
-.subheader {
+.subheader,
+.navbar-toggler-icon {
     color: #21b3b8;
+}
+
+@media screen and (min-width: 992px){
+    .navbar-login {
+        margin-left: 5px;
+    }
 }
 
 .nav-link {
     color: #fa5189;
-    font-size: 14pt;
+    font-size: 16pt;
 }
 
 .btn {
@@ -32,7 +39,7 @@ body {
 #banner {
     background: url(https://res-3.cloudinary.com/fieldfisher/image/upload/c_lfill,g_auto/f_auto,q_auto/v1/sectors/technology/tech_neoncircuitboard_857021704_medium_lc5h05) center center no-repeat;
     background-size: cover;
-    height: 725px;
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -50,6 +57,7 @@ body {
     color: #fa5189;
     border: solid 3px #21b3b8;
     text-align: center;
+    /* overflow: auto; */
 }
 
 .card {
@@ -121,5 +129,14 @@ textarea {
 @media screen and (max-width: 770px) {
     .card {
         margin: auto;
-    }
+    };
+    
+}
+
+
+@media screen and (max-width: 770px) {
+    .banner-header {
+        margin: auto;
+    };
+    
 }

@@ -17,20 +17,25 @@
     <nav class="navbar navbar-expand-lg shadow py-4 sticky-top">
         <div class="container-fluid">
             <h1 class="display-6 brand mx-3">theM<i class="fas fa-spinner"></i>THERBOARD</h1>
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"><i class="fas fa-bars fa-lg"></i></span>
             </button>
+
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../">Home</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="../posts">Posts</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav mx-3">
+
+                <ul class="navbar-nav navbar-login">
                     <li class="nav-item">
                         {{#if logged_in}}
                         <a class="nav-link active" aria-current="page" id="logout" href="#">Logout</a>
@@ -40,6 +45,7 @@
                         {{/if}}
                     </li>
                 </ul>
+
             </div>
         </div>
     </nav>

@@ -28,11 +28,8 @@
     {{#each posts.Comments as |comment|}}
     <div class="container">
         <div class="row comment-row py-3">
-            <div class="col-sm-1">
-                <p>{{comment.User.username}}: </p>
-            </div>
-            <div class="col-sm-11">
-                <p>{{comment.comment}}</p>
+            <div class="col">
+                <p>{{comment.User.username}}: {{comment.comment}}</p>
             </div>
             <br>
         </div>
