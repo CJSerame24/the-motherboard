@@ -130,7 +130,6 @@ textarea {
     .card {
         margin: auto;
     };
-    
 }
 
 
@@ -138,5 +137,10 @@ textarea {
     .banner-header {
         margin: auto;
     };
-    
+}
+
+@media screen and (max-width: 770px) {
+    .post-container {
+        width: auto;
+    }
 }
